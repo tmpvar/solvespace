@@ -101,7 +101,7 @@ void Slvs_Solve(Slvs_System *ssys, Slvs_hGroup shg)
 
     for(i = 0; i < ssys->entities; i++) {
         Slvs_Entity *se = &(ssys->entity[i]);
-        EntityBase e;
+        Entity e;
         ZERO(&e);
 
         switch(se->type) {
@@ -137,7 +137,7 @@ default: dbp("bad entity type %d", se->type); return;
 
     for(i = 0; i < ssys->constraints; i++) {
         Slvs_Constraint *sc = &(ssys->constraint[i]);
-        ConstraintBase c;
+        Constraint c;
         ZERO(&c);
 
         int t;

@@ -6,6 +6,13 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 
 include(CheckIncludeFile)
 
+include_directories(
+  ${CMAKE_SOURCE_DIR}/src
+  ${CMAKE_SOURCE_DIR}/include
+  ${CMAKE_SOURCE_DIR}/exposed
+  ${CMAKE_BINARY_DIR}
+)
+
 # for /MT on MSVC
 set(CMAKE_USER_MAKE_RULES_OVERRIDE
    "${CMAKE_SOURCE_DIR}/cmake/c_flag_overrides.cmake")
@@ -90,3 +97,40 @@ if(WIN32)
 endif()
 
 add_subdirectory(src)
+
+add_library(
+    ss
+    src/bsp.cpp
+    src/clipboard.cpp
+#    src/confscreen.cpp
+    src/constraint.cpp
+    src/constrainteq.cpp
+#    src/describescreen.cpp
+#    src/draw.cpp
+#    src/drawconstraint.cpp
+#    src/drawentity.cpp
+    src/entity.cpp
+    src/export.cpp
+    src/exportstep.cpp
+    src/exportvector.cpp
+    src/expr.cpp
+    src/file.cpp
+    src/generate.cpp
+    src/group.cpp
+    src/groupmesh.cpp
+    src/lib.cpp
+    src/mesh.cpp
+    src/modify.cpp
+    src/polygon.cpp
+    src/request.cpp
+#    src/solvespace.cpp
+#    src/style.cpp
+#    src/system.cpp
+#    src/textscreens.cpp
+#    src/textwin.cpp
+#    src/toolbar.cpp
+    src/ttf.cpp
+    src/undoredo.cpp
+    src/util.cpp
+)
+
